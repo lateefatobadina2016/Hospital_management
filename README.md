@@ -1,78 +1,95 @@
 # 🏥 AI-Powered Hospital Management System
 
-A modern, modular, and intuitive web application built with **Streamlit** for managing hospital operations. This system securely handles Doctors, Patients, and Appointments, while heavily leveraging **Llama AI** (via LiteLLM) to assist medical staff with diagnosis recommendations and general hospital queries.
+![HMS Dashboard Preview](C:\Users\user\.gemini\antigravity\brain\15958bb7-2eb6-429e-aae8-78373e3b2acd\hms_dashboard_preview_1778707368802.png)
 
-## ✨ Features
+[![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://share.streamlit.io/)
+[![Python 3.9+](https://img.shields.io/badge/python-3.9+-blue.svg)](https://www.python.org/downloads/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-- **📊 Interactive Dashboard:** Get a bird's-eye view of total departments, active doctors, registered patients, and pending appointments.
-- **👨‍⚕️ Doctor Management:** Add and view doctors, assign them to specific departments, and track their assigned patients.
-- **🩺 Patient Records:** Securely register patients and view their comprehensive medical history, including past diagnoses and AI-assisted recommendations.
-- **📅 Appointment Scheduling:** Schedule appointments between doctors and patients.
-- **🤖 AI Diagnosis Assistant:** When completing an appointment, doctors can input symptoms/findings, and the integrated Llama AI will automatically generate professional medical recommendations.
-- **💬 General AI Assistant Chatbot:** A dedicated conversational interface for hospital staff to query medical information or summarize hospital data.
+A state-of-the-art, modular web application built with **Streamlit** for seamless hospital operations management. This system integrates **Llama AI** (via LiteLLM) to empower medical professionals with intelligent diagnosis recommendations and automated administrative assistance.
 
-## 🛠️ Tech Stack
+---
 
-- **Frontend/UI:** [Streamlit](https://streamlit.io/) (with custom CSS for a premium aesthetic)
-- **Backend Core:** Python (Modular Object-Oriented design)
-- **AI Integration:** [LiteLLM](https://github.com/BerriAI/litellm) (Supports Ollama, Groq, OpenAI, etc.)
-- **Environment Management:** `python-dotenv`
+## 🌟 Key Features
 
-## 📁 Project Structure
+*   **📊 Dynamic Dashboard:** Real-time analytics on hospital performance, patient flow, and resource allocation.
+*   **👨‍⚕️ Advanced Doctor Portal:** Comprehensive management of medical staff across specialized departments.
+*   **🩺 Secure Patient Records:** HIPAA-inspired digital health records with AI-augmented diagnosis history.
+*   **📅 Smart Appointments:** Streamlined scheduling system connecting patients with the right specialists.
+*   **🤖 Llama AI Assistant:** 
+    *   **Automated Diagnosis:** Generates professional medical insights based on symptoms.
+    *   **Staff Chatbot:** Interactive knowledge base for hospital protocols and medical queries.
 
-The codebase is highly modular, ensuring ease of maintenance and scalability:
+---
+
+## 🛠️ Technology Stack
+
+| Component | Technology |
+| :--- | :--- |
+| **Frontend** | [Streamlit](https://streamlit.io/) with Premium CSS |
+| **Intelligence** | [LiteLLM](https://github.com/BerriAI/litellm) (Llama 3.3) |
+| **Logic** | Python 3.x (Object-Oriented Architecture) |
+| **Environment** | `python-dotenv` |
+
+---
+
+## 📁 Architecture Overview
 
 ```text
-├── app.py                   # Main entry point and Streamlit router
-├── models.py                # Core data structures (Patient, Doctor, Appointment, etc.)
-├── hospital_manager.py      # Main controller logic
-├── requirements.txt         # Python dependencies
-├── .env.example             # Template for API Keys
+├── app.py                   # Central Routing & UI Entry Point
+├── models.py                # Core Entities (Patient, Doctor, etc.)
+├── hospital_manager.py      # Business Logic Controller
 ├── services/
-│   └── ai_service.py        # Centralized LLM/AI inference logic
-├── utils/
-│   └── styles.py            # Custom CSS definitions
-└── views/                   # Modular Streamlit UI pages
-    ├── dashboard.py
-    ├── doctors.py
-    ├── patients.py
-    ├── appointments.py
-    └── assistant.py
+│   └── ai_service.py        # AI Inference Layer (LiteLLM)
+├── views/                   # Modular Page Components
+│   ├── dashboard.py
+│   └── assistant.py
+└── utils/
+    └── styles.py            # Global Design System
 ```
 
-## 🚀 Getting Started
+---
 
-### 1. Clone the repository
+## 🚀 Quick Start
+
+### 1. Installation
 ```bash
 git clone https://github.com/lateefatobadina2016/Hospital_management.git
 cd Hospital_management
-```
-
-### 2. Install Dependencies
-It is recommended to use a virtual environment.
-```bash
 pip install -r requirements.txt
 ```
 
-### 3. Configure the AI Environment
-This application uses **LiteLLM**, meaning you can easily swap between a local, free AI (like Ollama) or a blazing fast cloud API (like Groq).
+### 2. Configuration
+Create a `.env` file from the template:
+```bash
+cp .env.example .env
+```
+Add your AI provider credentials (Ollama, Groq, or OpenAI) in the `.env` file.
 
-1. Copy the example environment file:
-   ```bash
-   cp .env.example .env
-   ```
-2. Open the `.env` file and configure your API keys. For example, if you are using a remote Ollama server:
-   ```env
-   OLLAMA_API_KEY=your_api_key_here
-   OLLAMA_BASE_URL=https://ollama.com/api/v1
-   ```
-   *(Note: You can edit `services/ai_service.py` to change the specific model from `ollama/llama3` to `groq/llama3-8b-8192` if you prefer).*
-
-### 4. Run the Application
+### 3. Launch
 ```bash
 streamlit run app.py
 ```
-The application will automatically open in your default web browser at `http://localhost:8501`.
+
+---
+
+## ☁️ Deployment
+
+### 🟢 Option A: Streamlit Community Cloud (Recommended)
+1. Push your code to a GitHub repository.
+2. Visit [share.streamlit.io](https://share.streamlit.io/).
+3. Connect your repo and deploy. **It's free and handles everything!**
+
+### 🟡 Option B: Vercel (Experimental)
+While Vercel is optimized for static sites, you can deploy using a Python runtime. 
+1. Install the [Vercel CLI](https://vercel.com/download).
+2. Run `vercel` in the project root.
+3. *Note: Streamlit on Vercel requires specific `vercel.json` routing which may impact performance.*
+
+---
+
+## 🎓 Academic Context
+This project was developed as part of a school project for **WSB Merito Gdansk**.
 
 ## 📄 License
-This project was developed as part of a school project for WSB Merito Gdansk.
+Distributed under the MIT License. See `LICENSE` for more information.
