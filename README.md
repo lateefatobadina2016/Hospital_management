@@ -89,7 +89,7 @@ While Vercel is optimized for static sites, you can deploy using a Python runtim
 ---
 
 ## 🎓 Academic Context
-This project was developed as part of a school project for **WSB Merito Gdansk**.
+This project was developed as a capstone project for an **AI Engineering Bootcamp**.
 
 ## 📄 License
 Distributed under the MIT License. See `LICENSE` for more information.
